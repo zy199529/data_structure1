@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Lenovo
 # @Date:   2019-06-14 21:18:26
-# @Last Modified by:   zy19950209
-# @Last Modified time: 2019-06-15 09:55:17
+# @Last Modified by:   Lenovo
+# @Last Modified time: 2019-06-15 10:50:28
 
 
 class Node(object):
@@ -70,20 +70,20 @@ def two_Tree(pre, mid):
     return r
 
 def PrintFromTopToBottom(root):
-        ans=[]
+        queue=[]
         if root==None:
-            return ans
+            return queue
         else:
             q=[root]
             while q:
                 node=q.pop(0)
                 print(node.element, end=" ")
-                ans.append(node.element)
+                queue.append(node.element)
                 if node.lchild:
                     q.append(node.lchild)
                 if node.rchild:
                     q.append(node.rchild)
-            return ans
+            return queue
 if __name__ == "__main__":
     pre = [1, 2, 4, 7, 3, 5, 6, 8]
     mid = [4, 7, 2, 1, 5, 3, 8, 6]
